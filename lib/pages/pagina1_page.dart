@@ -11,7 +11,15 @@ class Pagina1Screen extends StatelessWidget {
     final usuarioService = Provider.of<UsuarioService>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pagina 1'),
+        title: const Text('Pagina 1'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                // remover usuario
+                usuarioService.removerUsuario();
+              },
+              icon: const Icon(Icons.exit_to_app))
+        ],
       ),
       body: usuarioService.existeUsuario
           ? InformacionUsuario(
@@ -24,7 +32,7 @@ class Pagina1Screen extends StatelessWidget {
         onPressed: () {
           Navigator.pushNamed(context, 'pagina2');
         },
-        child: Icon(Icons.accessibility_new),
+        child: const Icon(Icons.accessibility_new),
       ),
     );
   }
@@ -43,7 +51,7 @@ class InformacionUsuario extends StatelessWidget {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
