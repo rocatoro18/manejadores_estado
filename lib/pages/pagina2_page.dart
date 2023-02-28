@@ -1,4 +1,7 @@
+import 'package:estados/models/usuario.dart';
+import 'package:estados/services/usuario_service.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Pagina2Screen extends StatelessWidget {
   const Pagina2Screen({super.key});
@@ -14,7 +17,13 @@ class Pagina2Screen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                final usuarioService =
+                    Provider.of<UsuarioService>(context, listen: false);
+                Usuario nuevoUsuario = Usuario(nombre: 'Roberto', edad: 23);
+
+                usuarioService.usuario = nuevoUsuario;
+              },
               color: Colors.blue,
               child: const Text(
                 'Establecer Usuario',
