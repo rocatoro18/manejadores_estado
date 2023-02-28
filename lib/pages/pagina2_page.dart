@@ -21,7 +21,10 @@ class Pagina2Screen extends StatelessWidget {
           children: [
             MaterialButton(
               onPressed: () {
-                Usuario nuevoUsuario = Usuario(nombre: 'Roberto', edad: 23);
+                Usuario nuevoUsuario = Usuario(
+                    nombre: 'Roberto',
+                    edad: 23,
+                    profesiones: ['Fullstack Dev', 'Cocinero']);
 
                 usuarioService.usuario = nuevoUsuario;
               },
@@ -42,7 +45,9 @@ class Pagina2Screen extends StatelessWidget {
               ),
             ),
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                usuarioService.agregarProfesion();
+              },
               color: Colors.blue,
               child: const Text(
                 'Añadir profession',

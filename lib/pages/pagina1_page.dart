@@ -66,20 +66,15 @@ class InformacionUsuario extends StatelessWidget {
           ListTile(
             title: Text('Edad: ${usuario.edad}'),
           ),
-          Text(
+          const Text(
             'Profesiones',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const Divider(),
-          ListTile(
-            title: Text('Profesion 1: '),
-          ),
-          ListTile(
-            title: Text('Profesion 2:'),
-          ),
-          ListTile(
-            title: Text('Profesion 3:'),
-          ),
+          // Desestructuracion
+          ...usuario.profesiones!
+              .map((profesion) => ListTile(title: Text(profesion)))
+              .toList()
         ],
       ),
     );
