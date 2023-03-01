@@ -32,7 +32,9 @@ class Pagina2Screen extends StatelessWidget {
               ),
             ),
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                usuarioCubit.cambiarEdad(24);
+              },
               color: Colors.blue,
               child: const Text(
                 'Cambiar Edad',
@@ -40,7 +42,9 @@ class Pagina2Screen extends StatelessWidget {
               ),
             ),
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                usuarioCubit.agregarProfesion();
+              },
               color: Colors.blue,
               child: const Text(
                 'Añadir profession',
