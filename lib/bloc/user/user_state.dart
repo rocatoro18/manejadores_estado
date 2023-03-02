@@ -11,3 +11,10 @@ abstract class UserState {
 class UserInitialState extends UserState {
   const UserInitialState() : super(existUser: false, user: null);
 }
+
+// Clase generadora de estados
+class UserSetState extends UserState {
+  final Usuario nuevoUsuario;
+  const UserSetState(this.nuevoUsuario)
+      : super(existUser: true, user: nuevoUsuario);
+}
